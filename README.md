@@ -106,13 +106,13 @@ The script generates a prediction and provides a user feedback field for whether
 
 ## Next steps
 
-* The demo: I definitely plan to write the script to output middle and base notes that correspond better with the top note selected (it is completely random right now).
+* **The demo**: I definitely plan to write the script to output middle and base notes that correspond better with the top note selected (it is completely random right now).
 
-* Bring in additional data sources to enrich the existing data: The basis for the correspondence of middle and base notes with top notes will likely involve the use of an additional data or reference source with info about notes families and fragrance chemistry. I'd like to use the families as a way to group middle and base notes, and from those groups, randomly output a note as a pairing with the top note selected by the user.
+* **Bring in additional data sources to enrich the existing data**: The basis for the correspondence of middle and base notes with top notes will likely involve the use of an additional data or reference source with info about notes families and fragrance chemistry. I'd like to use the families as a way to group middle and base notes, and from those groups, randomly output a note as a pairing with the top note selected by the user.
 
 With this I will address the raw notes data's weak predictor status of ratings, and thereby I hope to improve the models' performance.
 
-* Product development system: I'd like to leverage decision tree modeling on training data to get insight on a potential product development routes.
+* **Product development system**: I'd like to leverage decision tree modeling on training data to get insight on a potential product development routes.
 
 
 
