@@ -40,7 +40,7 @@ Tasks included:
 
 **Extract top, middle and base notes from mixed columns**: The original dataset had four columns with a mix of top, middle and base notes and different prefixes (see variables below). I wrote a function to loop through the columns to extract the unique labels, which I broke out into new columns, grouped by the prefix variables.
 
-![orig_cols_with_top_mid_base_notes](https://github.com/abishop17/fragrance_analysis_capstone/figures/orig_cols_with_top_mid_base_notes.png)
+![orig_cols_with_top_mid_base_notes](https://github.com/abishop17/fragrance_analysis_capstone/blob/main/figures/orig_cols_with_top_mid_base_notes.png)
 
 top_cols = [`top_0`], [`top_1`], ['`top_2`'], ['`top_3`']
 
@@ -49,10 +49,40 @@ middle_cols = ['`middle_0`'], ['`middle_0_1`'], ['`middle_1`'], ['`middle_0_2`']
 base_cols = ['`base_0`'], ['`base_0_1`'], ['`base_1`']
 
 
-![extracted_cols_with_top_mid_base_notes](https://git.generalassemb.ly/abishop17/project_3/blob/figures/extracted_cols_with_top_mid_base_notes.png)
+![extracted_cols_with_top_mid_base_notes](https://github.com/abishop17/fragrance_analysis_capstone/blob/main/figures/extracted_cols_with_top_mid_base_notes.png)
 
 
 **Dummify top, middle and base notes**: The data included multiple top notes for many fragrances, which is consistent with fragrance formulation practices. There were significantly fewer datapoints on middle and base notes. This fact about the data profile immediately gave rise to a project focus around top notes.
 
+**Bin average ratings into ratings categories**: I binned the average ratings into 5 categories (for ratings 1 through 5) for simplicity. Before binning, I considered using the original two-decimal-point ratings in a regression task, but decided against it since ratings are not true continuous numbers. The volume of discrete values would have meant a many-multiclass classification task, and this seemed unnecessary.
 
-![notes_counts_overall](https://git.generalassemb.ly/abishop17/project_3/blob/figures/notes_counts_overall.png)
+![notes_counts_overall](https://github.com/abishop17/fragrance_analysis_capstone/blob/main/figures/notes_counts_overall.png)
+
+## EDA
+
+The distribution of average ratings approaches normal, with some left skew.
+![distn_average_rating](https://github.com/abishop17/fragrance_analysis_capstone/blob/main/figures/distn_average_rating.png)
+
+## Metrics
+
+* 54% is the baseline accuracy percentage we compare with the model's accuracy.
+
+* If the model does better than the baseline, then it is better than null model (predicting the majority class, fragrances with a binned average rating of 4).
+
+* I chose accuracy because I did not prioritize one class over another.
+
+## Modeling and Results
+
+* The features I used consisted of the full set of top, middle and base notes. One reason I trained on all the notes was for demo purposes: I wanted to be able to predict the average rating with a complete set of notes, one from each of the three categories. However, given the class imbalance between top notes on the one hand and middle and base notes on the other, it would be worth it to use only the top notes as a feature set for modeling. 
+
+* I chose to work with logistic regression with and without Principal Component Analysis (PCA) and Random Forest because I prioritized interpretability of results. With logistic regression, the ridge regularization selected (after GridSearch) took care of the correlation among features. With Random Forest, I hoped to reduce variance and decorrelate the notes features.
+
+* Logistic regression used in a pipeline along with PCA, performed very poorly, with an accuracy score of 56.4% on test data (just a hair's width of improvement over the baseline). On this model, the feature set was reduced by PCA to just 80 out of the dummified 6k columns.
+
+* The best performing model, Random Forest (with GridSearchCV in a pipeline), still didn't perform well, with an accuracy score on test data of 60%. It overfit to the training data a lot (score on train data was 92%). I still used train data for purposes of inference (see below).
+
+## Conclusions
+
+**Holding all else constant, the `woody` note category is a .06 times evidence that we can predict ratings classes accurately using a Random Forest model.**
+
+
