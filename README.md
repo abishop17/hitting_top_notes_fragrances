@@ -89,7 +89,7 @@ The raw fragrance note data (dummified notes with prefixes and ungrouped into in
 
 ## Demo
 
-Using the [Streamlit](https://github.com/streamlit/streamlit) web app framework, I deployed a minimally viable app to make a perfume on the spot. It is geated to be a crowdsourcing app to initiate the product development process. This is the mix 'n match mentality in action. See the app flow below (screenshots taken from the app launched from my desktop):
+Using the [Streamlit](https://github.com/streamlit/streamlit) web app framework, I deployed a minimally viable app to make a perfume on the spot. It is geared to be a crowdsourcing app to initiate the product development process. This is the mix 'n match mentality in action. See the app flow below (screenshots taken from the app launched from my desktop):
 
 The header:
 
