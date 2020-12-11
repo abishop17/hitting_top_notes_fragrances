@@ -17,7 +17,7 @@
 
 Innovative combinations of diverse pieces / features are a natural point of interest for me. I am avidly interested in applications to create tangible / sense-stimulating products. An audiovisual example is multimedia art; a visual-tactile example is patchwork quilting that uses atypical fabric pairings (such as, say, a polyester holographic utility fabric and leather). 
 
-Materializing meaningful business applications is the target of the creative product design experience. How do we use a data-supported framework to channel the mix 'n match mentality towards positive business outcomes (like high customer ratings)?
+Materializing meaningful business applications is the target of the creative product design experience. How do we use a data-supported framework to gear the mix 'n match mentality towards positive business outcomes (like high customer ratings)?
 
 I will begin to explore this question through EDA and modeling.
 
@@ -95,11 +95,11 @@ The header:
 
 ![demo_header](https://github.com/abishop17/fragrance_analysis_capstone/blob/main/figures/demo/demo_header.png)
 
-The user makes a selection of a single top note from a static list taken directly from the dataset:
+The user makes a selection of a single top note from a static list taken directly from the dataset. A script randomly generates a middle and base note from those classes of features from within the dataset:
 
 ![demo_select_top_notes_and_make_a_fragrance](https://github.com/abishop17/fragrance_analysis_capstone/blob/main/figures/demo/demo_select_top_notes_and_make_a_fragrance.png)
 
-A script randomly generates a middle and base note from those classes of features from within the dataset:
+The script generates a prediction and provides a user feedback field for whether the user would like to wear the fragrance if offered a sample.
 
 ![demo_prediction_and_user_feedback](https://github.com/abishop17/fragrance_analysis_capstone/blob/main/figures/demo/demo_prediction_and_user_feedback.png)
 
@@ -108,7 +108,9 @@ A script randomly generates a middle and base note from those classes of feature
 
 * The demo: I definitely plan to write the script to output middle and base notes that correspond better with the top note selected (it is completely random right now).
 
-* Interpolate additional data sources: The basis for the correspondence of middle and base notes with top notes will likely involve the use of an additional data or reference source with info about notes families and fragrance chemistry. I'd like to use the families as a way to group middle and base notes, and from those groups, randomly output a note as a pairing with the top note selected by the user.
+* Bring in additional data sources to enrich the existing data: The basis for the correspondence of middle and base notes with top notes will likely involve the use of an additional data or reference source with info about notes families and fragrance chemistry. I'd like to use the families as a way to group middle and base notes, and from those groups, randomly output a note as a pairing with the top note selected by the user.
+
+With this I will address the raw notes data's weak predictor status of ratings, and thereby I hope to improve the models' performance.
 
 * Product development system: I'd like to leverage decision tree modeling on training data to get insight on a potential product development routes.
 
