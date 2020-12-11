@@ -40,7 +40,7 @@ Tasks included:
 
 **Extract top, middle and base notes from mixed columns**: The original dataset had four columns with a mix of top, middle and base notes and different prefixes (see variables below). I wrote a function to loop through the columns to extract the unique labels, which I broke out into new columns, grouped by the prefix variables.
 
-![orig_cols_with_top_mid_base_notes](https://github.com/abishop17/fragrance_analysis_capstone/blob/figures/orig_cols_with_top_mid_base_notes.png)
+![orig_cols_with_top_mid_base_notes](https://github.com/abishop17/fragrance_analysis_capstone/figures/orig_cols_with_top_mid_base_notes.png)
 
 top_cols = [`top_0`], [`top_1`], ['`top_2`'], ['`top_3`']
 
