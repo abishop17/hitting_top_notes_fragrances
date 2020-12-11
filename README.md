@@ -4,16 +4,14 @@
 
 ## Modeling on fragrance notes to classify ratings
 
-## Problem statement
+## Problem statement: Are the scents in fragrances good predictors of average customer ratings?
 
-**Question:** Are the scents in fragrances good predictors of average customer ratings?
-
-**Data source:** * [Fragrances - Notes and User Rating](https://www.kaggle.com/sagikeren88/fragrances-and-perfumes) | `notes_and_user_ratings.csv`
+**Data source:** [Fragrances - Notes and User Rating](https://www.kaggle.com/sagikeren88/fragrances-and-perfumes) | `notes_and_user_ratings.csv`
 >An enhanced dataset with scent breakdown, user ranking and segmentation and many more<br>
 >Perfume notes are divided into 3 main notes - Top, Middle (Heart) and Base.
 
 
-**Project goal and evaluation:** 
+**Project goal and evaluation:** The goal of the project is to use different supervised and unsupervised modeling techniques to make a determination about the problem statement, using accuracy scores and silhouette scores.
 
 ### Background: The interest area
 
@@ -28,19 +26,13 @@ I will begin to explore this question through EDA and modeling.
 
 ### Data dimensions
 
+The original raw dataset consisted of about 42,000 rows and 155 columns. After preprocessing, as detailed below, the column count ballooned to 6,753 columns (due to the multitude of unique notes with different prefixes).
+
 ### Background: The data source
-
-<br>
-<h2>Data dictionary</h2>
-
-|Column name| Description |
-| :-: | :-: |
-|**title**|Subreddit post title|
-
 
 ## Methodology
 
-**Handling of nulls**: The `body` column in the raw dataframe included 4,544 nulls (about 97% of rows). I decided to drop this column because of the low value of such an insubstantial proportion of `body` text.
+**Handling of nulls**: The nulls in the dataset came in the form of the word "none" after the note name's prefix. After creating dummies, I imputed zero values to the "none"-nulls.
 
 ## Preprocessing
 
@@ -48,8 +40,7 @@ Tasks included:
 
 **Extract top, middle and base notes from mixed columns**: The original dataset had four columns with a mix of top, middle and base notes and different prefixes (see variables below). I wrote a function to loop through the columns to extract the unique labels, which I broke out into new columns, grouped by the prefix variables.
 
-
-![orig_cols_with_top_mid_base_notes](https://git.generalassemb.ly/abishop17/project_3/blob/figures/orig_cols_with_top_mid_base_notes.png)
+![orig_cols_with_top_mid_base_notes](https://github.com/abishop17/fragrance_analysis_capstone/blob/figures/orig_cols_with_top_mid_base_notes.png)
 
 top_cols = [`top_0`], [`top_1`], ['`top_2`'], ['`top_3`']
 
