@@ -4,7 +4,7 @@
 
 ## Modeling on fragrance notes to classify ratings
 
-## Problem statement: Are the scents in fragrances good predictors of average customer ratings?
+## Problem statement: Are fragrance notes good predictors of average customer ratings?
 
 **Data source:** [Fragrances - Notes and User Rating](https://www.kaggle.com/sagikeren88/fragrances-and-perfumes) | `notes_and_user_ratings.csv`
 >An enhanced dataset with scent breakdown, user ranking and segmentation and many more<br>
@@ -26,7 +26,7 @@ I will begin to explore this question through EDA and modeling.
 
 ### Data dimensions
 
-The original raw dataset consisted of about 42,000 rows and 155 columns. After preprocessing, as detailed below, the column count ballooned to 6,753 columns (due to the multitude of unique notes with different prefixes).
+The original raw dataset consisted of about 42,000 rows and 155 columns. Due to the multitude of unique notes with different prefixes, the preprocessing caused the column count to balloon to 3,720 columns for top notes only and to 6,753 columns for top, middle and base notes.
 
 ### Background: The data source
 
@@ -73,17 +73,17 @@ The distribution of average ratings approaches normal, with some left skew.
 
 ## Modeling and Results
 
-* The features I used consisted of the full set of top, middle and base notes. One reason I trained on all the notes was for demo purposes: I wanted to be able to predict the average rating with a complete set of notes, one from each of the three categories. However, given the class imbalance between top notes on the one hand and middle and base notes on the other, it would be worth it to use only the top notes as a feature set for modeling. 
+* The features I used consisted of only the top notes.  
 
-* I chose to work with logistic regression with and without Principal Component Analysis (PCA) and Random Forest because I prioritized interpretability of results. With logistic regression, the ridge regularization selected (after GridSearch) took care of the correlation among features. With Random Forest, I hoped to reduce variance and decorrelate the notes features.
+* I chose to work with logistic regression with and without Principal Component Analysis (PCA) because I prioritized interpretability of results. With logistic regression, the ridge regularization selected (after GridSearch) took care of the correlation among features.
 
-* Logistic regression used in a pipeline along with PCA, performed very poorly, with an accuracy score of 56.4% on test data (just a hair's width of improvement over the baseline). On this model, the feature set was reduced by PCA to just 80 out of the dummified 6k columns.
+* The clustering models were an unsupervised modeling choice that stopped short when I discovered the low silhouette scores (KMeans had the higher score of -0.2).
 
-* The best performing model, Random Forest (with GridSearchCV in a pipeline), still didn't perform well, with an accuracy score on test data of 60%. It overfit to the training data a lot (score on train data was 92%). I still used train data for purposes of inference (see below).
+* Logistic regression used in a pipeline along with PCA, performed very poorly, with an accuracy score of 56.4% on test data (just a hair's width of improvement over the baseline). On this model, the feature set was reduced by PCA to just 40 out of the dummified 3k columns.
 
 ## Conclusions
 
-**Holding all else constant, the `woody` note category is a .06 times evidence that we can predict ratings classes accurately using a Random Forest model.**
+**Holding all else constant, the `almond` top note is a .75 times evidence that we can predict ratings classes accurately using a logistic regression model.**
 
 The raw fragrance note data (dummified notes with prefixes and ungrouped into informative categories) are a weak predictor of customer ratings. See the "Next steps" section below for ways I plan to address this.
 
