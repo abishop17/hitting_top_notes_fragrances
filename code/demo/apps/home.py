@@ -1,4 +1,3 @@
-# ref: https://github.com/upraneelnihar/streamlit-multiapps
 
 import pandas as pd
 import streamlit as st
@@ -8,7 +7,6 @@ import numpy as np
 from annotated_text import annotated_text
 
 from functions import make_a_fragrance
-# from multiapp import MultiApp
 
 st.set_page_config(
         page_title="Fragrance maker!",
@@ -55,11 +53,6 @@ top_note_selection = st.radio(label = 'Select a top note',
        'Earl grey tea', 'Champagne', 'Crème brûlée', 'Pepper', 'Nutmeg',
        'Teakwood', 'Pine needles', 'Mountain air'])
 
-# for i, x in enumerate(top_note_selection):
-#     st.write(top_notes_demo[i])
-
-# column = st.selectbox("Describe Column", list(dataset.columns),    format_func=top_notes_demo_orig_and_sani.get)
-
 ### accessing original vs. sanitized top_note name
 # option = st.selectbox("selectbox 2", list(options.items()), 0 , format_func=lambda o: o[1])
 # option[0]
@@ -70,29 +63,23 @@ st.write("If you don't care for this one, just click another radio button above 
 
 # ref: https://github.com/tvst/st-annotated-text
 
-st.title(
-    annotated_text(
-    (make_a_fragrance(top_note_selection)[0], "(top note)", "#97f0e3"),
-    (make_a_fragrance(top_note_selection)[1], "(middle note)", "#fd7c6e"),
-    (make_a_fragrance(top_note_selection)[2], "(base note)", "#ace5ee")
+# st.title(
+#     annotated_text(
+#     (make_a_fragrance(top_note_selection)[0], "(top note)", "#97f0e3"),
+#     (make_a_fragrance(top_note_selection)[1], "(middle note)", "#fd7c6e"),
+#     (make_a_fragrance(top_note_selection)[2], "(base note)", "#ace5ee")
     
-    ))
+#     ))
 
 # Read in the pickle file of the fitted model
 with open('../../../data/data_subsets/demo/synth_df.pkl', 'rb') as pickle_in:
     synth_df_from_pkl = pickle.load(pickle_in)
 
-# Ugh Streamlit isn't updating the prediction! For now I need to take a temporary dishonorable shortcut, skip below the real code to the simulation code. Check out autoreload to troubleshoot?
-# # Real code
-# # Predict the rating 
-# predicted_rating = logreg_from_pkl.predict(synth_df_from_pkl)
-# # Example: predicted_author = pipe.predict([user_text])[0]
-# st.subheader(f'Your fragrance will likely get an average rating of {predicted_rating[0]}')
 
-# # Simulation code :-/
-sim_vals = [3, 3, 4, 4, 4]
-sim_rating = np.random.choice(sim_vals)
-st.subheader(f'Your fragrance will likely get an average rating of {sim_rating}')
+# Predict the rating 
+predicted_rating = logreg_from_pkl.predict(synth_df_from_pkl)
+
+st.subheader(f'Your fragrance will likely get an average rating of {predicted_rating[0]}')
 
 # Get user text, save it
 st.write('If you were offered a sample of this fragrance, would you wear it?')
@@ -100,18 +87,6 @@ st.write('If you were offered a sample of this fragrance, would you wear it?')
 user_text = st.text_input('Wear the sample offered?', 
               value = "Yes I'd totally try this!")
 
-
-# app.run()
-
-# st.sidebar.title('Navigate')
-# # st.sidebar.text('What page do you want to view?')
-# # st.button('About')
-# # st.button('Explore')
-# # st.button('Make a fragrance')
-# # st.button('Predict customer rating')
-# # if st.button('Click'): 
-# #      rand = np.random.standard_normal()
-# #      st.write(str(rand))
 
 page = st.sidebar.selectbox(
     'Page',
