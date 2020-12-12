@@ -21,6 +21,17 @@ Materializing meaningful business applications is the target of the creative pro
 
 I will begin to explore this question through EDA and modeling.
 
+### Background: Fragrance notes
+
+**Top**: Form initial impression. Selling point. High volatility. 
+Light, bright (like citrus fruits)
+
+**Middle**: Forms the body. 40-80% of total aroma. Midrange volatility.
+Complex, midweight (like florals) 
+
+**Base**: Foundation of fragrance. Brings depth. Low volatility.
+Deep, heavyweight (like sandalwood) 
+
 
 ## The data
 
