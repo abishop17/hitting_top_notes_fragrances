@@ -79,7 +79,7 @@ The distribution of average ratings approaches normal, with some left skew.
 
 * The clustering models were an unsupervised modeling choice that stopped short when I discovered the low silhouette scores (KMeans had the higher score of -0.2).
 
-* Logistic regression used in a pipeline along with PCA, performed very poorly, with an accuracy score of 56.4% on test data (just a hair's width of improvement over the baseline). On this model, the feature set was reduced by PCA to just 40 out of the dummified 3k columns.
+* Logistic regression used in a pipeline along with PCA, performed very poorly, with an accuracy score of 56.9% on test data (just a hair's width of improvement over the baseline). On this model, the feature set was reduced by PCA to just 40 out of the dummified 3k columns.
 
 ## Conclusions
 
