@@ -26,10 +26,10 @@ I will begin to explore this question through EDA and modeling.
 **Top**: Form initial impression. Selling point. High volatility. 
 Light, bright (like citrus fruits)
 
-**Middle**: Forms the body. 40-80% of total aroma. Midrange volatility.
+**Middle**: Formsthe body. 40-80% of total aroma. Midrange volatility.
 Complex, midweight (like florals) 
 
-**Base**: Foundation of fragrance. Brings depth. Low volatility.
+**Base**: Foundation of fragrance. Bring depth. Low volatility.
 Deep, heavyweight (like sandalwood) 
 
 
