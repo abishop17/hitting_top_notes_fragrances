@@ -87,6 +87,8 @@ The distribution of average ratings approaches normal, with some left skew.
 
 The raw fragrance note data (dummified notes with prefixes and ungrouped into informative categories) are a weak predictor of customer ratings. See the "Next steps" section below for ways I plan to address this.
 
+![logreg_coefs_head_tail](https://github.com/abishop17/fragrance_analysis_capstone/blob/main/figures/logreg_coefs_head_tail.png)
+
 ## Demo
 
 Using the [Streamlit](https://github.com/streamlit/streamlit) web app framework, I deployed a minimally viable app to make a perfume on the spot. It is geared to be a crowdsourcing app to initiate the product development process. This is the mix 'n match mentality in action. See the app flow below (screenshots taken from the app launched from my desktop):
