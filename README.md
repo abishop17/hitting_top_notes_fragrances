@@ -26,7 +26,7 @@ I will begin to explore this question through EDA and modeling.
 **Top**: Form initial impression. Selling point. High volatility. 
 Light, bright (like citrus fruits)
 
-**Middle**: Formsthe body. 40-80% of total aroma. Midrange volatility.
+**Middle**: Forms the body. 40-80% of total aroma. Midrange volatility.
 Complex, midweight (like florals) 
 
 **Base**: Foundation of fragrance. Bring depth. Low volatility.
@@ -53,12 +53,11 @@ Tasks included:
 
 ![orig_cols_with_top_mid_base_notes](https://github.com/abishop17/fragrance_analysis_capstone/blob/main/figures/orig_cols_with_top_mid_base_notes.png)
 
-top_cols = [`top_0`], [`top_1`], ['`top_2`'], ['`top_3`']
+top_cols = [`top_0`], [`top_1`], [`top_2`], [`top_3`]
 
-middle_cols = ['`middle_0`'], ['`middle_0_1`'], ['`middle_1`'], ['`middle_0_2`'], ['`middle_1_1`'], ['`middle_2`']
+middle_cols = [`middle_0`], [`middle_0_1`], [`middle_1`], [`middle_0_2`], [`middle_1_1`], [`middle_2`]
 
-base_cols = ['`base_0`'], ['`base_0_1`'], ['`base_1`']
-
+base_cols = [`base_0`], [`base_0_1`], [`base_1`]
 
 ![extracted_cols_with_top_mid_base_notes](https://github.com/abishop17/fragrance_analysis_capstone/blob/main/figures/extracted_cols_with_top_mid_base_notes.png)
 
