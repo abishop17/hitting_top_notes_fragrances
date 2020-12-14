@@ -64,9 +64,9 @@ base_cols = [`base_0`], [`base_0_1`], [`base_1`]
 
 **Dummify top, middle and base notes**: The data included multiple top notes for many fragrances, which is consistent with fragrance formulation practices. There were significantly fewer datapoints on middle and base notes. This fact about the data profile immediately gave rise to a project focus around top notes.
 
-**Bin average ratings into ratings categories**: I binned the average ratings into 5 categories (for ratings 1 through 5) for simplicity. Before binning, I considered using the original two-decimal-point ratings in a regression task, but decided against it since ratings are not true continuous numbers. The volume of discrete values would have meant a many-multiclass classification task, and this seemed unnecessary.
+![notes_counts_overall_and_most_freq](https://github.com/abishop17/fragrance_analysis_capstone/blob/main/figures/notes_counts_overall_and_most_freq.png)
 
-![notes_counts_overall](https://github.com/abishop17/fragrance_analysis_capstone/blob/main/figures/notes_counts_overall.png)
+**Bin average ratings into ratings categories**: I binned the average ratings into 5 categories (for ratings 1 through 5) for simplicity. Before binning, I considered using the original two-decimal-point ratings in a regression task, but decided against it since ratings are not true continuous numbers. The volume of discrete values would have meant a many-multiclass classification task, and this seemed unnecessary.
 
 ## EDA
 
