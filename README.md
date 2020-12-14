@@ -1,8 +1,9 @@
 # README
 
-# Capstone Project: Hitting the Top Notes
+# Hitting the Top Notes
+# Modeling on fragrance notes to classify ratings
 
-## Modeling on fragrance notes to classify ratings
+## Capstone Project, General Assembly Data Science Immersive Coursework, Fall 2020
 
 ## Problem statement: Are fragrance notes good predictors of average customer ratings?
 
